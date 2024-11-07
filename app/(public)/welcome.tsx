@@ -1,9 +1,9 @@
-import { LinearGradient } from 'expo-linear-gradient';
 import { Link } from 'expo-router';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Button } from '~/components/Button';
 import { Icons } from '~/components/icons';
-import { COLORS } from '~/theme/colors';
+import { COLORS } from '~/constants/Colors';
 
 export default function WelcomeScreen() {
   return (
@@ -13,15 +13,9 @@ export default function WelcomeScreen() {
         <Text style={styles.slangText}>Everybody Can Train</Text>
       </View>
       <Link href="/onboarding" asChild replace>
-        <TouchableOpacity style={styles.button}>
-          <LinearGradient
-            start={[0, 0]}
-            end={[1, 0]}
-            colors={['#9DCEFF', '#92A3FD']}
-            style={styles.buttonGradient}>
-            <Text style={styles.getStartedText}>Get Started</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+        <Button style={styles.button} variant="primary">
+          <Text style={styles.getStartedText}>Get Started</Text>
+        </Button>
       </Link>
     </SafeAreaView>
   );
@@ -47,12 +41,6 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 99,
     overflow: 'hidden',
-  },
-  buttonGradient: {
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   getStartedText: {
     color: COLORS.white,

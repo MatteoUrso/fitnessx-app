@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "fitnessx-app",
+    "name": "FitnessX",
+    "description": "FitnestX is a Application that combine workout app, meal tracker app and health app in one so that users will no longer need to use separate apps to keep.",
     "slug": "fitnessx-app",
     "version": "1.0.0",
     "scheme": "fitnessx-app",
@@ -9,10 +10,7 @@
       "output": "static",
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-router",
-      "expo-font"
-    ],
+    "plugins": ["expo-router", "expo-font"],
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true
@@ -25,9 +23,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

@@ -6,5 +6,9 @@ export default function AuthenticatedLayout() {
   // If the user is not signed in, redirect to the welcome screen.
   if (!isSignedIn) return <Redirect href="/welcome" />;
 
-  return <Stack />;
+  return (
+    <Stack>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
+  );
 }

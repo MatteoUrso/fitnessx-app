@@ -1,4 +1,13 @@
-export default [
+import { ImageSourcePropType } from 'react-native';
+
+export type OnboardingAnimatedSliderType = {
+  id: string;
+  title: string;
+  description: string;
+  image: ImageSourcePropType;
+};
+
+export const OnboardingAnimatedSliderData: OnboardingAnimatedSliderType[] = [
   {
     id: '1',
     title: 'Track Your Goals',

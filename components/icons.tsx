@@ -32,4 +32,15 @@ export const Icons = {
       </Defs>
     </Svg>
   ),
+  arrowRight: (props: SvgProps) => (
+    <Svg width={10} height={16} viewBox="0 0 10 16" fill="none" {...props}>
+      <Path
+        d="M1.5 1l7 7-7 7"
+        stroke="#130F26"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  ),
 };

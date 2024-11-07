@@ -1,10 +1,10 @@
-import Entypo from '@expo/vector-icons/Entypo';
-import { LinearGradient } from 'expo-linear-gradient';
+import { Button } from './Button';
+import SvgComponent from './svg/arrow-right';
 import React from 'react';
 import { useCallback, useEffect, useRef } from 'react';
-import { Animated, StyleSheet, TouchableOpacity } from 'react-native';
+import { Animated, StyleSheet } from 'react-native';
 import Svg, { Circle, G } from 'react-native-svg';
-import { COLORS } from '~/theme/colors';
+import { COLORS } from '~/constants/Colors';
 
 const SIZE = 60;
 const STROKE_WIDTH = 2;
@@ -17,7 +17,7 @@ type Props = {
   scrollTo: () => void;
 };
 
-export default function NextButton({ percentage, scrollTo }: Props) {
+export default function OnboardingAnimatedSliderNextButton({ percentage, scrollTo }: Props) {
   const progressAnimation = useRef(new Animated.Value(0)).current;
   const progressRef = useRef(null);
 
@@ -57,7 +57,7 @@ export default function NextButton({ percentage, scrollTo }: Props) {
       <Svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`} fill="none">
         <G rotation={-90} origin={CENTER}>
           <Circle
-            stroke={'#F7F8F8'}
+            stroke={COLORS.border}
             cx={CENTER}
             cy={CENTER}
             r={RADIUS}
@@ -65,7 +65,7 @@ export default function NextButton({ percentage, scrollTo }: Props) {
           />
           <Circle
             ref={progressRef}
-            stroke={'#9DCEFF'}
+            stroke={COLORS.babyBlueEyes}
             cx={CENTER}
             cy={CENTER}
             r={RADIUS}
@@ -74,15 +74,9 @@ export default function NextButton({ percentage, scrollTo }: Props) {
           />
         </G>
       </Svg>
-      <TouchableOpacity onPress={scrollTo} style={styles.button} activeOpacity={0.6}>
-        <LinearGradient
-          start={[0, 0]}
-          end={[1, 0]}
-          colors={['#9DCEFF', '#92A3FD']}
-          style={styles.linearGradient}>
-          <Entypo name="chevron-right" size={24} color={COLORS.white} />
-        </LinearGradient>
-      </TouchableOpacity>
+      <Button onPress={scrollTo} style={styles.button} variant="primary" activeOpacity={0.6}>
+        <SvgComponent color={COLORS.white} />
+      </Button>
     </>
   );
 }
@@ -98,11 +92,5 @@ const styles = StyleSheet.create({
     width: SIZE - 10,
     height: SIZE - 10,
     overflow: 'hidden',
-  },
-  linearGradient: {
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
