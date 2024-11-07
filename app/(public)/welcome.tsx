@@ -1,9 +1,9 @@
+import { LinearGradient } from 'expo-linear-gradient';
+import { Link } from 'expo-router';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Icons } from '~/components/icons';
 import { COLORS } from '~/theme/colors';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Link } from 'expo-router';
 
 export default function WelcomeScreen() {
   return (
@@ -12,7 +12,7 @@ export default function WelcomeScreen() {
         <Icons.logo />
         <Text style={styles.slangText}>Everybody Can Train</Text>
       </View>
-      <Link href="/onboarding" asChild>
+      <Link href="/onboarding" asChild replace>
         <TouchableOpacity style={styles.button}>
           <LinearGradient
             start={[0, 0]}
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   slangText: {
     color: COLORS.gray1,
     fontSize: 18,
+    fontFamily: 'Poppins_400Regular',
   },
   button: {
     width: '100%',
@@ -58,5 +59,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     fontWeight: 'bold',
+    fontFamily: 'Poppins_700Bold',
   },
 });
