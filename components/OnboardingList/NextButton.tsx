@@ -46,6 +46,10 @@ export default function NextButton({ percentage, scrollTo }: Props) {
         });
       }
     });
+
+    return () => {
+      progressAnimation.removeAllListeners();
+    };
   }, [percentage, progressAnimation]);
 
   return (
