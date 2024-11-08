@@ -1,5 +1,5 @@
 import { Button } from './Button';
-import SvgComponent from './svg/arrow-right';
+import ArrowRight from './svg/arrow-right';
 import React from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
@@ -75,7 +75,7 @@ export default function OnboardingAnimatedSliderNextButton({ percentage, scrollT
         </G>
       </Svg>
       <Button onPress={scrollTo} style={styles.button} variant="primary" activeOpacity={0.6}>
-        <SvgComponent color={COLORS.white} />
+        <ArrowRight color={COLORS.white} />
       </Button>
     </>
   );

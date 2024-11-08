@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { Path, SvgProps } from 'react-native-svg';
 
-function SvgComponent(props: SvgProps) {
+function Notification(props: SvgProps) {
   return (
     <Svg width={20} height={22} viewBox="0 0 20 22" fill="none" {...props}>
       <Path
@@ -23,4 +23,4 @@ function SvgComponent(props: SvgProps) {
   );
 }
 
-export default SvgComponent;
+export default Notification;
